@@ -7,9 +7,9 @@ function App() {
 
   return (
     <>
-    <Contact/>
+    <Contact />
     </>
-  )
+  );
 }
 
 export default App;

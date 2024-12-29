@@ -1,4 +1,5 @@
-import react, { useState } from 'react';
+import  { useState } from 'react';
+
 const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -6,7 +7,7 @@ const Contact = () => {
         message: ''
     });
 
-    const handChange = (e) => {
+    const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
@@ -17,30 +18,18 @@ const Contact = () => {
         // Here you can handle the form submission, like sending the data to the server
     };
     return(
-        <div>
-            <h2>Contact Us</h2>
-            <form onSubmit={handleSubmiti}>
-            <div>
+        <div className="container">
+            <h2 className="contact-tag">Contact Us</h2>
+            <form onSubmit={handleSubmit}>
+            <div className="name-tag">
                 <label htmlFor="name">Name:</label>
-                <
-                    input type="text" id="name" name='name' value={formData.name} onChange={handleChange} required 
-                />
-            </div>
-            <div>
+                <input type="text" id="name" name='name' value={formData.name} onChange={handleChange} required/> <br />
                 <label htmlFor="email">Email:</label>
-                <
-                    input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required            
-                />
+                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required/> <br />
+                <label htmlFor="message">Message:</label> <br />
+                <textarea className="message-tag" id="message" name="message" value={formData.message} onChange={handleChange} required></textarea>
             </div>
-            <div>
-                <label htmlFor="message">Message:</label>
-                <textarea>
-                <
-                    input type="message" id="message" name="message" value={formData.message} onChange={handleCHanfe} required
-                />
-                </textarea>
-            </div>
-            <button type="submit">Submit</button>
+            <button className="btn" type="submit">Submit</button>
             </form>
         </div>
     );
