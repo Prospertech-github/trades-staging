@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 // Put any other imports below so that CSS from your
 // components takes precedence over default style
 import  { useState } from 'react';
+import  contact from './contact.module.css';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -21,18 +22,18 @@ const Contact = () => {
         // Here you can handle the form submission, like sending the data to the server
     };
     return(
-        <div className="container">
-            <h2 className="contact-tag">Contact Us</h2>
+        <div className={ contact.container }>
+            <h2 className={ contact.contactTag }>Contact Us</h2>
             <form onSubmit={handleSubmit}>
-            <div className="name-tag">
+            <div className={ contact.nameTag }>
                 <label htmlFor="name">Name:</label>
                 <input type="text" id="name" name='name' value={formData.name} onChange={handleChange} required/> <br />
                 <label htmlFor="email">Email:</label>
                 <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required/> <br />
                 <label htmlFor="message">Message:</label> <br />
-                <textarea className="message-tag" id="message" name="message" value={formData.message} onChange={handleChange} required></textarea>
+                <textarea className={contact.messageTag} id="message" name="message" value={formData.message} onChange={handleChange} required></textarea>
             </div>
-            <button className="btn" type="submit">Submit</button>
+            <button className={contact.btn} type="submit">Submit</button>
             </form>
         </div>
     );
