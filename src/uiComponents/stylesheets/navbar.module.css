@@ -1,0 +1,27 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    border: 2px solid green;
+}
+header h1{
+    font-size: 4.8rem;
+    cursor: pointer;
+}
+.navItems{
+    display: flex;
+    gap: 4rem;
+}
+.navItems a{
+    color: #fff;
+    font-size: 2rem;
+}
+.authBtns a{
+    background-color: var(--secondaryColor);
+    color: var(--primaryColor);
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-radius: 10px;
+}
