@@ -43,7 +43,6 @@ p, li, a{
 }
 
 .main{
-    border: 2px solid red;
     max-width: 1440px;
     margin: 0 auto;
 }
