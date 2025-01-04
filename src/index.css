@@ -26,6 +26,7 @@ html{
 body{
     background-color: #070f22;
     color: #fff;
+    line-height: 1.5;
 }
 
 h1,h2, h3, h4{
@@ -45,4 +46,21 @@ p, li, a{
     border: 2px solid red;
     max-width: 1440px;
     margin: 0 auto;
+}
+
+.sectionHeadings{
+    text-align: center;
+    padding: 3.6rem 0;
+}
+.sectionHeadings > h3{
+    font-size: 3.2rem;
+}
+.sectionHeadings > p{
+    color: #fff;
+    font-size: 1.6rem;
+    text-align: center;
+    width: 60%;
+    margin: .8rem auto;
+    font-weight: 300;
+   
 }
