@@ -55,8 +55,8 @@ function Home() {
         <div>
           <div className={home.vidCtn}>
             <iframe
-              src="https://www.youtube.com/embed/A3s0PliLOnY"
-              title="Stonking The Stocks | Timothy Ronald | TEDxYouth@SmakOne"
+              src="https://www.youtube.com/embed/1rnXX28zKu_cl0KV"
+              title="The Keys to Living a Rich Life | Bridget Hilton | TEDxTemecula"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
