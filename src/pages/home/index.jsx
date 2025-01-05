@@ -6,6 +6,7 @@ import { RiUserCommunityFill } from "react-icons/ri";
 import Outlet from "../../uiComponents/outlet";
 import SectionHeading from "../../uiComponents/sectionHeading";
 import WhyBoxes from "../../uiComponents/whyBoxes";
+import StockPrices from "./stockComponent";
 import home from "./home.module.css";
 
 function Home() {
@@ -95,6 +96,8 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <StockPrices />
     </Outlet>
   );
 }

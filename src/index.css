@@ -33,7 +33,7 @@ h1,h2, h3, h4{
     font-family: "Poppins", serif;
 }
 
-p, li, a{
+p, li, a, td, th{
     font-family: "Roboto", serif;
     color: #fff;
 }
