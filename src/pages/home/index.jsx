@@ -7,7 +7,10 @@ import Outlet from "../../uiComponents/outlet";
 import SectionHeading from "../../uiComponents/sectionHeading";
 import WhyBoxes from "../../uiComponents/whyBoxes";
 import StockPrices from "./stockComponent";
+import Carousel from "react-multi-carousel";
 import home from "./home.module.css";
+import CarouselComponent from "../../uiComponents/carousel";
+
 
 function Home() {
   return (
@@ -76,28 +79,39 @@ function Home() {
             <WhyBoxes
               heading="Fast Execution"
               description="Never miss a pip. Get your orders executed in milliseconds"
-            > 
-                <FaRunning className="specialText" size={56}/>
+            >
+              <FaRunning className="specialText" size={56} />
             </WhyBoxes>
 
             <WhyBoxes
               heading="Security of Funds"
               description="Trade the commodity markets with negative balance protection"
             >
-                <IoShieldCheckmark className="specialText" size={56}/>
+              <IoShieldCheckmark className="specialText" size={56} />
             </WhyBoxes>
-            
+
             <WhyBoxes
               heading="Excellent Community"
               description="There is an active team behind us, and we adore communicating with our users"
             >
-                <RiUserCommunityFill className="specialText" size={56}/>
+              <RiUserCommunityFill className="specialText" size={56} />
             </WhyBoxes>
           </div>
         </div>
       </section>
 
       <StockPrices />
+
+      <section className={home.testimonial}>
+        <SectionHeading
+          title="Don't take our words"
+          specialText="RoyalTradex?"
+          paragraph="From beginners to experts, True stories showing success in commodity trading - listen to our successful commodity traders"
+        />
+      </section>
+
+    <CarouselComponent />
+
     </Outlet>
   );
 }
