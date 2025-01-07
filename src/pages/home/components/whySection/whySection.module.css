@@ -1,0 +1,15 @@
+.gridCtn{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.4rem;
+    margin: 8rem 0;
+}
+.vidCtn{
+    width: 80rem;
+    height: 40rem;
+    margin: 6rem auto;
+}
+.vidCtn > iframe{
+    width: 100%;
+    height: 100%;
+}

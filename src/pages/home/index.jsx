@@ -1,20 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { FaBolt, FaCoins, FaChartBar, FaRunning } from "react-icons/fa";
-import { IoShieldCheckmark } from "react-icons/io5";
-import { RiUserCommunityFill } from "react-icons/ri";
 import Outlet from "../../uiComponents/outlet";
-import SectionHeading from "../../uiComponents/sectionHeading";
-import WhyBoxes from "../../uiComponents/whyBoxes";
-import StockPrices from "./stockComponent";
-import Carousel from "react-multi-carousel";
+import StockPrices from "./components/stockComponent/stockComponent";
+import WhySection from "./components/whySection/whySection";
 import home from "./home.module.css";
-import CarouselComponent from "../../uiComponents/carousel";
+import HeroSection from "./components/heroSection/heroSection";
+import Testimonials from "./components/testimonialSection/testimonials";
+import Faq from "./components/faq/faq";
 
 
 function Home() {
   return (
     <Outlet>
+<<<<<<< HEAD
       <section className={home.heroSection}>
         <div>
           <h1>
@@ -100,18 +97,13 @@ function Home() {
         </div>
       </section>
 
+=======
+      <HeroSection />
+      <WhySection />
+>>>>>>> da019ff86433c3e6a58593f4a17bcb7a53138794
       <StockPrices />
-
-      <section className={home.testimonial}>
-        <SectionHeading
-          title="Don't take our words"
-          specialText="RoyalTradex?"
-          paragraph="From beginners to experts, True stories showing success in commodity trading - listen to our successful commodity traders"
-        />
-      </section>
-
-    <CarouselComponent />
-
+      <Testimonials />
+      <Faq />
     </Outlet>
   );
 }

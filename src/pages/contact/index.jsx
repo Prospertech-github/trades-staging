@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.css';g
 // Put any other imports below so that CSS from your
 // components takes precedence over default style
 import  { useState } from 'react';
@@ -8,10 +8,10 @@ const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        message: ''
+        unmessage: ''
     });
 
-    const handleChange = (e) => {
+    const handleChange = (e) => { 
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
@@ -28,7 +28,8 @@ const Contact = () => {
             <div className={ contact.nameTag }>
                 <label htmlFor="name">Name:</label>
                 <input type="text" id="name" name='name' value={formData.name} onChange={handleChange} required/> <br />
-                <label htmlFor="email">Email:</label>
+                <label htmlF
+                or="email">Email:</label>
                 <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required/> <br />
                 <label htmlFor="message">Message:</label> <br />
                 <textarea className={contact.messageTag} id="message" name="message" value={formData.message} onChange={handleChange} required></textarea>

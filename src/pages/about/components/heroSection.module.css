@@ -1,0 +1,9 @@
+.heroDiv{
+    padding: 8rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.heroDiv h2{
+    font-size: 4rem;
+}

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "./stockComponent.module.css";
-import SectionHeading from "../../uiComponents/sectionHeading";
+import SectionHeading from "../../../../uiComponents/sectionHeading";
 import axios from "axios";
-import Loader from "../../uiComponents/loader";
+import Loader from "../../../../uiComponents/loader";
 
 const StockPrices = () => {
   const [stocks, setStocks] = useState([]);
