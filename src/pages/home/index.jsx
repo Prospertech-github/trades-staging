@@ -5,6 +5,7 @@ import WhySection from "./components/whySection/whySection";
 import home from "./home.module.css";
 import HeroSection from "./components/heroSection/heroSection";
 import Testimonials from "./components/testimonialSection/testimonials";
+import Faq from "./components/faq/faq";
 
 
 function Home() {
@@ -14,6 +15,7 @@ function Home() {
       <WhySection />
       <StockPrices />
       <Testimonials />
+      <Faq />
     </Outlet>
   );
 }
