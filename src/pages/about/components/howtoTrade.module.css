@@ -1,0 +1,57 @@
+:root {
+  --yellow: #f6ce1e;
+  --base-spacing: 0.4rem; /* 4px */
+  --font-size-base: 1.6rem; /* Default font size */
+}
+
+.container {
+  text-align: center;
+  padding: 1.6rem;
+  color: #fff;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 2rem;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  background-color: #1e1e1e;
+  border-radius: 0.8rem;
+}
+
+.stepIcon {
+  font-size: 3.2rem;
+  color: var(--secondaryColor);
+}
+
+.stepTitle {
+  font-size: 2rem;
+  margin-bottom: .8rem;
+  text-align: left;
+}
+
+.stepDescription {
+  font-size: 1.6rem;
+  color: #ccc;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .steps {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .step {
+    flex: 1 1 calc(40%);
+    max-width: calc(45%);
+  }
+}
