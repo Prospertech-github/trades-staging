@@ -50,6 +50,11 @@ const Login = () => {
             Sign Up
           </Link>
         </p>
+        <p className={login.return}>
+          <Link to="/signup" className={login.signUpLink}>
+            Back to Home
+          </Link>
+        </p>
       </div>
     </div>
   );
