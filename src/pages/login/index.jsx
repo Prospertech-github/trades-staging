@@ -46,12 +46,12 @@ const Login = () => {
         </form>
         <p className={login.signUp}>
           Don’t have an account?{" "}
-          <Link to="/signup" className={login.signUpLink}>
+          <Link to="/register" className={login.signUpLink}>
             Sign Up
           </Link>
         </p>
         <p className={login.return}>
-          <Link to="/signup" className={login.signUpLink}>
+          <Link to="/" className={login.signUpLink}>
             Back to Home
           </Link>
         </p>
