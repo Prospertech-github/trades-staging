@@ -27,7 +27,7 @@ function Navbar() {
             <Link to="/login">Login</Link>
           </li>
           <li className={navbar.authBtns}>
-            <Link to="/sign-up">Sign Up</Link>
+            <Link to="/register">Sign Up</Link>
           </li>
         </ul>
       </nav>
