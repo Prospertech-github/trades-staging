@@ -1,44 +1,84 @@
 .container {
-    padding: 20px;
-    background-color: #1d1d1d;
-    color: #fff;
-  }
-  
+  padding: 20px;
+  background-color: #1d1d1d;
+  color: #fff;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 1.6rem; /* Adjusted for better readability on smaller screens */
+}
+
+.table th,
+.table td {
+  border: 1px solid #444;
+  padding: 10px;
+  text-align: center;
+}
+
+.table th {
+  background-color: #333;
+  color: #f5c518;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.tradeButton {
+  background-color: #f5c518;
+  color: #1d1d1d;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.tradeButton:hover {
+  background-color: #d4a80c;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    font-size: 1.8rem;
+    font-size: 1.4rem; /* Adjust font size for smaller screens */
   }
-  
+
   .table th,
   .table td {
-    border: 1px solid #444;
-    padding: 10px;
-    text-align: center;
+    padding: 8px;
   }
-  
-  .table th {
-    background-color: #333;
-    color: #f5c518;
-  }
-  
+
   .icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 8px;
+    width: 20px;
+    height: 20px;
   }
-  
-  .tradeButton {
-    background-color: #f5c518;
-    color: #1d1d1d;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 4px;
+}
+
+@media (max-width: 480px) {
+  .table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap; /* Enable horizontal scrolling for small screens */
   }
-  
-  .tradeButton:hover {
-    background-color: #d4a80c;
+
+  .table th,
+  .table td {
+    font-size: 1.2rem;
+    padding: 6px;
   }
-  
+
+  .container {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+}

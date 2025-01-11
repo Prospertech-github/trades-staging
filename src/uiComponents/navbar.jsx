@@ -1,33 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import navbar from "./stylesheets/navbar.module.css";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <header>
+    <header className={navbar.header}>
       <div className={navbar.logo}>
-        <h1 className="specialText"> RoyalTradex </h1>
+        <h1 className={navbar.specialText}>RoyalTradex</h1>
       </div>
 
-      <nav>
+      <button
+        className={`${navbar.hamburger} ${menuOpen ? navbar.active : ""}`}
+        onClick={toggleMenu}
+        aria-label="Toggle Menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav className={`${navbar.nav} ${menuOpen ? navbar.open : ""}`}>
         <ul className={navbar.navItems}>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" onClick={() => setMenuOpen(false)}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about" onClick={() => setMenuOpen(false)}>
+              About
+            </Link>
           </li>
           <li>
-            <Link to="/services">Services</Link>
+            <Link to="/services" onClick={() => setMenuOpen(false)}>
+              Services
+            </Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact" onClick={() => setMenuOpen(false)}>
+              Contact
+            </Link>
           </li>
-          <li className={navbar.authBtns}>
-            <Link to="/login">Login</Link>
+          <li>
+            <Link to="/login" className={navbar.authBtn} onClick={() => setMenuOpen(false)}>
+              Login
+            </Link>
           </li>
-          <li className={navbar.authBtns}>
-            <Link to="/register">Sign Up</Link>
+          <li>
+            <Link to="/register" className={navbar.authBtn} onClick={() => setMenuOpen(false)}>
+              Sign Up
+            </Link>
           </li>
         </ul>
       </nav>
