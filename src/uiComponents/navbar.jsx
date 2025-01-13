@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import navbar from "./stylesheets/navbar.module.css";
+import Logo from '../assets/logo.png'
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,7 +13,7 @@ function Navbar() {
   return (
     <header className={navbar.header}>
       <div className={navbar.logo}>
-        <h1 className={navbar.specialText}>RoyalTradex</h1>
+        <img src={Logo} alt="" />
       </div>
 
       <button

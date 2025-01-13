@@ -2,12 +2,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 4rem;
+    padding: 4rem 4rem;
     background-color: var(--primaryColor);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.75);
     position: sticky;
     top: 0;
     z-index: 1000;
+  }
+
+  .logo{
+    width: 35rem;
+  }
+  .logo > img{
+    width: 100%;
   }
   
   .logo h1 {

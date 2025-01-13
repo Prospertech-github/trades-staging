@@ -1,9 +1,3 @@
-:root {
-  --yellow: #f6ce1e;
-  --base-spacing: 0.4rem; /* 4px */
-  --font-size-base: 1.6rem; /* Default font size */
-}
-
 .container {
   text-align: center;
   padding: 1.6rem;
