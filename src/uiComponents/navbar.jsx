@@ -39,11 +39,6 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/services" onClick={() => setMenuOpen(false)}>
-              Services
-            </Link>
-          </li>
-          <li>
             <Link to="/contact" onClick={() => setMenuOpen(false)}>
               Contact
             </Link>
