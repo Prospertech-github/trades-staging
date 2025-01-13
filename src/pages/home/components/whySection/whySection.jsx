@@ -11,7 +11,7 @@ function WhySection() {
     <section>
         <SectionHeading
           title="Why Trade with"
-          specialText="RoyalTradex?"
+          specialText="GoldenCoin?"
           paragraph="Trade commodities for profit, diversification, and protection against
         inflation, leveraging their inherent value and market dynamics to fortify your portfolio"
         />

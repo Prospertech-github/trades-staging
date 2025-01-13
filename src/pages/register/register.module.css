@@ -145,3 +145,61 @@
 .signInLink:hover {
   text-decoration: underline;
 }
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .leftSection {
+    height: 40%;
+  }
+
+  .image {
+    height: auto;
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .rightSection {
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .formRow {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .formGroup {
+    width: 100%;
+  }
+
+  .signUpButton {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 3rem;
+  }
+
+  .subheading {
+    font-size: 1.4rem;
+  }
+
+  .label {
+    font-size: 1.6rem;
+  }
+
+  .checkboxLabel {
+    font-size: 1.2rem;
+  }
+
+  .signIn {
+    font-size: 1.4rem;
+  }
+}

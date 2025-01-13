@@ -8,7 +8,7 @@ function Testimonials() {
     <section className={section.testimonial}>
       <SectionHeading
         title="Don't take our words"
-        specialText="RoyalTradex?"
+        specialText="GoldenCoin?"
         paragraph="From beginners to experts, True stories showing success in commodity trading - listen to our successful commodity traders"
       />
       <CarouselComponent />

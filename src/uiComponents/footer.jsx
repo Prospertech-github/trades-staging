@@ -6,7 +6,7 @@ function Footer() {
       <div>
         <p>
           <span className="specialText">
-            &copy;{new Date().getFullYear()} RoyalTradex
+            &copy;{new Date().getFullYear()} GoldenCoin
           </span>
           . All Rights Reserved
         </p>

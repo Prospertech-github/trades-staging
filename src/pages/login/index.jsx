@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import login from "./login.module.css";
-import LoginImage from "../../assets/loginImage.png";
+import LoginImage from "../../assets/loginImage.png"
+import Logo from "../../assets/logo.png";
 
 const Login = () => {
   return (
@@ -13,9 +14,9 @@ const Login = () => {
         />
       </div>
       <div className={login.rightSection}>
-        <div className={login.logo}>
-          {/* <img src="https://via.placeholder.com/100" alt="Logo" /> */}
-        </div>
+        {/* <div className={login.logo}>
+          <img src={Logo} alt="Logo" />
+        </div> */}
         <h2 className={login.heading}>Welcome Back</h2>
         <p className={login.subheading}>
           We missed you and are excited to have you here again

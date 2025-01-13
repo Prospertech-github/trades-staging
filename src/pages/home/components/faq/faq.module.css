@@ -47,3 +47,23 @@
   line-height: 1.5;
   color: #ddd;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .faqSection {
+    padding: 20px 10px;
+  }
+
+  .faqQuestion {
+    font-size: 1.6rem; /* Adjust for smaller screens */
+  }
+
+  .toggleIcon {
+    font-size: 1.8rem;
+  }
+
+  .faqAnswer {
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+}
