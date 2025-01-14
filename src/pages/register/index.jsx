@@ -5,27 +5,24 @@ import LoginImage from "../../assets/loginImage.png";
 import { Link } from "react-router-dom";
 
 const Register = () => {
-  const [countries, setCountries] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  // Fetch the list of countries on component mount
-  useEffect(() => {
-    const fetchCountries = async () => {
-      try {
-        const response = await axios.get("https://restcountries.com/v3.1/all");
-        const sortedCountries = response.data
-          .map((country) => country.name.common)
-          .sort(); // Sort alphabetically
-        setCountries(sortedCountries);
-        setLoading(false); // Stop loading once data is fetched
-      } catch (error) {
-        console.error("Error fetching countries:", error);
-        setLoading(false); // Stop loading even on error
-      }
-    };
+  function handleSubmit(e){
+    e.preventDefault();
 
-    fetchCountries();
-  }, []);
+    axios
+      .post("http://localhost:3069/api/v1/auth/register", {
+        firstName,
+        lastName,
+        email,
+        password
+      })
+      .then((response) => {})
+      .catch((error) => {});
+  }
 
   return (
     <div className={register.container}>
@@ -46,25 +43,29 @@ const Register = () => {
         <form className={register.form}>
           <div className={register.formRow}>
             <div className={register.formGroup}>
-              <label htmlFor="username" className={register.label}>
-                Username <span className={register.required}>*</span>
+              <label htmlFor="firstName" className={register.label}>
+                First Name <span className={register.required}>*</span>
               </label>
               <input
                 type="text"
-                id="username"
+                id="firstName"
                 className={register.input}
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
                 required
               />
             </div>
 
             <div className={register.formGroup}>
-              <label htmlFor="email" className={register.label}>
-                Email <span className={register.required}>*</span>
+              <label htmlFor="lastName" className={register.label}>
+                Last Name <span className={register.required}>*</span>
               </label>
               <input
-                type="email"
-                id="email"
+                type="text"
+                id="lastName"
                 className={register.input}
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
                 required
               />
             </div>
@@ -72,30 +73,29 @@ const Register = () => {
 
           <div className={register.formRow}>
             <div className={register.formGroup}>
-              <label htmlFor="country" className={register.label}>
-                Country
+              <label htmlFor="email" className={register.label}>
+                Email  <span className={register.required}>*</span>
               </label>
-              <select id="country" className={register.select} required>
-                <option value="">
-                  {loading ? "Loading countries..." : "Select a country"}
-                </option>
-                {countries &&
-                  countries.map((country) => (
-                    <option key={country} value={country}>
-                      {country}
-                    </option>
-                  ))}
-              </select>
+              <input
+                type="email"
+                id="email"
+                className={register.input}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
             </div>
 
             <div className={register.formGroup}>
-              <label htmlFor="mobile" className={register.label}>
-                Mobile Number <span className={register.required}>*</span>
+              <label htmlFor="password" className={register.label}>
+                Password <span className={register.required}>*</span>
               </label>
               <input
-                type="tel"
-                id="mobile"
+                type="password"
+                id="password"
                 className={register.input}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </div>
@@ -114,7 +114,7 @@ const Register = () => {
               <span className="specialText">Trading Policy</span>
             </label>
           </div>
-          <button type="submit" className={register.signUpButton}>
+          <button type="submit" className={register.signUpButton} onClick={handleSubmit}>
             Sign Up
           </button>
         </form>
