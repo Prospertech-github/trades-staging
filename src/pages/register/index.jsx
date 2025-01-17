@@ -14,7 +14,7 @@ const Register = () => {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3069/api/v1/auth/register", {
+      .post("https://api.goldencoin.pro/", {
         firstName,
         lastName,
         email,
