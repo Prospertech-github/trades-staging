@@ -125,7 +125,7 @@ const Register = () => {
             </label>
           </div>
           <button type="submit" className={register.signUpButton}>
-            {isLoading ? "Wait a Minute ..." : "Sign"}
+            {isLoading ? "Wait a Minute ..." : "Sign Up"}
           </button>
         </form>
 
