@@ -5,23 +5,38 @@ import LoginImage from "../../assets/loginImage.png";
 import { Link } from "react-router-dom";
 
 const Register = () => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  function handleSubmit(e){
+  function handleSubmit(e) {
     e.preventDefault();
+    console.log("api posting");
 
+    setIsLoading(true);
     axios
-      .post("https://api.goldencoin.pro/", {
+      .post("https://api.goldencoin.pro/api/v1/auth/register", {
         firstName,
         lastName,
         email,
-        password
+        password,
       })
-      .then((response) => {})
-      .catch((error) => {});
+      .then((response) => {
+        console.log(response);
+        if (response.status === 201) alert("Account created successfully");
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        if (error.status === 422)
+          alert(`Kindly check the data entered and input correct details. \nPassword must be eight(8) characters long \nEmail must be a valid .com email`);
+        console.error(error);
+        console.error(error.status);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   }
 
   return (
@@ -40,7 +55,7 @@ const Register = () => {
           Take the first step and unlock endless possibilities
         </p>
 
-        <form className={register.form}>
+        <form className={register.form} onSubmit={handleSubmit}>
           <div className={register.formRow}>
             <div className={register.formGroup}>
               <label htmlFor="firstName" className={register.label}>
@@ -74,7 +89,7 @@ const Register = () => {
           <div className={register.formRow}>
             <div className={register.formGroup}>
               <label htmlFor="email" className={register.label}>
-                Email  <span className={register.required}>*</span>
+                Email <span className={register.required}>*</span>
               </label>
               <input
                 type="email"
@@ -114,8 +129,8 @@ const Register = () => {
               <span className="specialText">Trading Policy</span>
             </label>
           </div>
-          <button type="submit" className={register.signUpButton} onClick={handleSubmit}>
-            Sign Up
+          <button type="submit" className={register.signUpButton}>
+            {isLoading ? "Wait a Minute ..." : "Sign"}
           </button>
         </form>
 
