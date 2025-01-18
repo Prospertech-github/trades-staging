@@ -13,8 +13,6 @@ const Register = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("api posting");
-
     setIsLoading(true);
     axios
       .post("https://api.goldencoin.pro/api/v1/auth/register", {
@@ -24,15 +22,12 @@ const Register = () => {
         password,
       })
       .then((response) => {
-        console.log(response);
         if (response.status === 201) alert("Account created successfully");
         setIsLoading(false);
       })
       .catch((error) => {
         if (error.status === 422)
           alert(`Kindly check the data entered and input correct details. \nPassword must be eight(8) characters long \nEmail must be a valid .com email`);
-        console.error(error);
-        console.error(error.status);
       })
       .finally(() => {
         setIsLoading(false);
