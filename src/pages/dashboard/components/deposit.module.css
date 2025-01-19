@@ -1,0 +1,70 @@
+.deposit {
+  max-width: 600px;
+  margin: auto;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.deposit h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.paymentMethods {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.paymentCard {
+  background: #334155;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.paymentCard:hover {
+  background: #475569;
+}
+
+.selected {
+  background: #0284c7;
+  color: white;
+}
+
+.depositDetails p {
+  margin-bottom: 5px;
+}
+
+.depositDetails input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #334155;
+  color: white;
+}
+
+.depositDetails input::placeholder {
+  color: #94a3b8;
+}
+
+.depositDetails button {
+  width: 100%;
+  padding: 10px;
+  background: #0284c7;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+}
+
+.depositDetails button:hover {
+  background: #0369a1;
+}

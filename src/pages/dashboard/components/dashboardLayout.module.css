@@ -1,0 +1,38 @@
+/* Dashboard.module.css */
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+  background-color: #0d1117;
+  color: #c9d1d9;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+
+
+button {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:first-of-type {
+  background-color: #238636;
+  color: white;
+}
+
+button:last-of-type {
+  background-color: #f85149;
+  color: white;
+}
