@@ -15,7 +15,7 @@
 
 
 
-button {
+/* button {
   margin: 5px;
   padding: 10px;
   border: none;
@@ -25,14 +25,14 @@ button {
 
 button:hover {
   opacity: 0.8;
-}
+} */
 
-button:first-of-type {
+/* button:first-of-type {
   background-color: #238636;
   color: white;
-}
+} */
 
-button:last-of-type {
-  background-color: #f85149;
+/* button:last-of-type {
+  background-color: var(--secondaryColor);
   color: white;
-}
+} */

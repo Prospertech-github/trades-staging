@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import login from "./login.module.css";
 import LoginImage from "../../assets/loginImage.png";
@@ -9,6 +9,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  const navigate = useNavigate()
+
   function handleLogin(e) {
     e.preventDefault();
     setIsLoading(true);
@@ -18,8 +20,11 @@ const Login = () => {
         password,
       })
       .then((response) => {
+        console.log(response.data.data)
         if (response.status === 200) alert("Successfully Logged In");
         setIsLoading(false);
+        sessionStorage.setItem('userDetails', JSON.stringify(response.data.data))
+        navigate("/dashboard")
       })
       .catch((error) => {
         if (error.status === 401) alert(`Invalid Email or Password`);

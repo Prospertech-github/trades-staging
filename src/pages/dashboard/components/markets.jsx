@@ -20,16 +20,20 @@ const Markets = () => {
       .catch((error) => console.error(error));
   }, []);
 
+  const formatPrice = (price) => {
+    return price.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  };
+
   return (
-    <div>
-      <h1>Markets</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Markets</h1>
       <div className={styles.grid}>
         {data.map((item) => (
           <div key={item.id} className={styles.card}>
-            <h3>
+            <h3 className={styles.cardTitle}>
               {item.name} ({item.symbol.toUpperCase()})
             </h3>
-            <p>${item.current_price.toFixed(2)}</p>
+            <p className={styles.price}>${formatPrice(item.current_price)}</p>
             <p
               className={
                 item.price_change_percentage_24h < 0
@@ -39,8 +43,8 @@ const Markets = () => {
             >
               {item.price_change_percentage_24h.toFixed(2)}%
             </p>
-            <button>Buy</button>
-            <button>Sell</button>
+            <button className={`${styles.buyBtn} ${styles.button}`}>Buy</button>
+            <button className={`${styles.sellBtn} ${styles.button}`}>Sell</button>
           </div>
         ))}
       </div>
