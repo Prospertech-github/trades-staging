@@ -1,0 +1,61 @@
+/* CSS Module */
+.sidebar {
+  width: 250px;
+  background-color: #161b22;
+  padding: 20px;
+  position: fixed;
+  left: -260px;
+  top: 0;
+  height: 100vh;
+  transition: left 0.3s ease;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar h2 {
+  text-align: center;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin: 20px 0;
+}
+
+.sidebar nav ul li a {
+  color: #c9d1d9;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.sidebar nav ul li a:hover {
+  color: #58a6ff;
+}
+
+.hamburger {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+  .sidebar {
+    left: 0;
+    position: relative;
+    height: auto;
+  }
+}

@@ -1,16 +1,27 @@
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
 import axios from "axios";
 import login from "./login.module.css";
 import LoginImage from "../../assets/loginImage.png";
-import { useState } from "react";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  const navigate = useNavigate()
+  const {IsLoggedIn, setIsLoggedIn} = useContext(AuthContext)
+
   function handleLogin(e) {
     e.preventDefault();
+
+    if(IsLoggedIn){
+      alert('User already LoggedIn')
+      return
+    }
+
+
     setIsLoading(true);
     axios
       .post("https://api.goldencoin.pro/api/v1/auth/login", {
@@ -18,8 +29,12 @@ const Login = () => {
         password,
       })
       .then((response) => {
+        console.log(response.data.data)
         if (response.status === 200) alert("Successfully Logged In");
         setIsLoading(false);
+        sessionStorage.setItem('userDetails', JSON.stringify(response.data.data))
+        setIsLoggedIn(true)
+        navigate("/dashboard")
       })
       .catch((error) => {
         if (error.status === 401) alert(`Invalid Email or Password`);

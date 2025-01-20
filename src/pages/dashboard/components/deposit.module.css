@@ -1,0 +1,129 @@
+/* CSS Module */
+.deposit {
+  max-width: 70rem;
+  margin: 8rem auto;
+  background: #1e293b;
+  padding: 3rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.4rem;
+}
+
+.subtitle {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.paymentMethods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.paymentCard {
+  background-color: var(--secondaryColor);
+  /* background: #334155; */
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 2rem;
+}
+
+.paymentCard:hover {
+  background: #475569;
+}
+
+.selected {
+  background: #0284c7;
+  color: white;
+}
+
+.depositDetails {
+  font-size: 1.8rem;
+  width: 100%;
+}
+
+.detailText {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.inputField {
+  width: 100%;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #334155;
+  color: white;
+  font-size: 2rem;
+}
+
+.fileInput {
+  font-size: 2rem;
+}
+
+.button {
+  width: 100%;
+  padding: 1.5rem;
+  background: #0284c7;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: white;
+  font-size: 2rem;
+}
+
+.button:hover {
+  background: #0369a1;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3.6rem;
+  }
+  .subtitle, .detailText {
+    font-size: 2.2rem;
+  }
+  .paymentCard {
+    font-size: 2.2rem;
+  }
+  .inputField, .fileInput, .button {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .deposit {
+    max-width: 80rem;
+    padding: 4rem;
+  }
+  .title {
+    font-size: 4rem;
+  }
+  .subtitle, .detailText {
+    font-size: 2.4rem;
+  }
+  .paymentMethods {
+    gap: 3rem;
+  }
+  .paymentCard {
+    font-size: 2.4rem;
+  }
+  .inputField, .fileInput, .button {
+    font-size: 2.4rem;
+  }
+}
