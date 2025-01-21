@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useContext, useState, useEffect} from "react";
+import { AuthContext } from "../contexts/AuthContext";
 import { Link } from "react-router-dom";
 import navbar from "./stylesheets/navbar.module.css";
 import Logo from '../assets/logo.png'
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const {isLoggedIn, setIsLoggedIn} = useContext(AuthContext)
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  useEffect(() => {
+      if(sessionStorage.getItem('userDetails')){
+        setIsLoggedIn(true);
+      }
+    }, []);
 
   return (
     <header className={navbar.header}>
@@ -43,16 +51,27 @@ function Navbar() {
               Contact
             </Link>
           </li>
-          <li>
-            <Link to="/login" className={navbar.authBtn} onClick={() => setMenuOpen(false)}>
-              Login
-            </Link>
-          </li>
-          <li>
-            <Link to="/register" className={navbar.authBtn} onClick={() => setMenuOpen(false)}>
-              Sign Up
-            </Link>
-          </li>
+          
+          {!isLoggedIn ? (
+            <>
+              <li>
+                <Link to="/login" className={navbar.authBtn} onClick={() => setMenuOpen(false)}>
+                  Login
+                </Link>
+              </li>
+              <li>
+                <Link to="/register" className={navbar.authBtn} onClick={() => setMenuOpen(false)}>
+                  Sign Up
+                </Link>
+              </li>
+            </>
+          ) : (
+            <li>
+              <Link to="/dashboard" className={navbar.authBtn} onClick={() => setMenuOpen(false)}>
+                Dashboard
+              </Link>
+            </li>
+          )}
         </ul>
       </nav>
     </header>

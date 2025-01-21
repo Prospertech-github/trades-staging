@@ -77,3 +77,6 @@ footer > div{
     text-align: center;
     font-size: 2rem;
 }
+input:focus{
+    outline: none;
+}

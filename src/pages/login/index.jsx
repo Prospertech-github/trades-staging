@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import axios from "axios";
@@ -29,7 +29,6 @@ const Login = () => {
         password,
       })
       .then((response) => {
-        console.log(response.data.data)
         if (response.status === 200) alert("Successfully Logged In");
         setIsLoading(false);
         sessionStorage.setItem('userDetails', JSON.stringify(response.data.data))
@@ -44,6 +43,12 @@ const Login = () => {
         setIsLoading(false);
       });
   }
+
+  useEffect(()=>{
+    if(sessionStorage.getItem('userDetails'))
+      navigate('/');
+  },[])
+
 
   return (
     <div className={login.container}>
