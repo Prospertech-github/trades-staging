@@ -4,6 +4,7 @@ import Home from "./pages/home";
 import About from "./pages/about";
 import Login from "./pages/login";
 import Register from "./pages/register";
+import Contact from "./pages/contact";
 import Dashboard from "./pages/dashboard";
 import Markets from "./pages/dashboard/components/markets";
 import Deposit from "./pages/dashboard/components/deposit";
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route
