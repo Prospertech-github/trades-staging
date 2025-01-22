@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Link, useNavigate} from "react-router-dom";
 import axios from "axios";
 import register from "./register.module.css";
 import LoginImage from "../../assets/loginImage.png";
-import { Link } from "react-router-dom";
 
 const Register = () => {
   const [firstName, setFirstName] = useState("");
@@ -10,6 +10,8 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  const navigate = useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -24,6 +26,7 @@ const Register = () => {
       .then((response) => {
         if (response.status === 201) alert("Account created successfully");
         setIsLoading(false);
+        navigate('/login')
       })
       .catch((error) => {
         if (error.status === 422)
@@ -34,12 +37,17 @@ const Register = () => {
       });
   }
 
+  useEffect(()=>{
+    if(sessionStorage.getItem('userDetails'))
+      navigate('/');
+  },[])
+
   return (
     <div className={register.container}>
       <div className={register.leftSection}>
         <img
           src={LoginImage}
-          alt="Business discussion"
+          alt="Client and Agent interacting"
           className={register.image}
         />
       </div>
